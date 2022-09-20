@@ -1,0 +1,35 @@
+// C++ code
+//
+int pir=2,led1=4,t=8,e=7,led2=12;
+void setup()
+{
+  pinMode(pir,INPUT);
+  pinMode(led1,OUTPUT);
+  pinMode(t,OUTPUT);
+  pinMode(e,INPUT);
+  pinMode(led2,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int a=digitalRead(pir);
+  Serial.println(a);
+  if(a==1){
+    digitalWrite(led1,HIGH);
+  }
+  digitalWrite(t,0);
+  digitalWrite(t,1);
+  delayMicroseconds(10);
+  digitalWrite(t,0);
+  float dur=pulseIn(e,HIGH);
+  float dis=(dur*0.0343)/2;
+  Serial.print("distance is");
+  Serial.println(dis);
+  if(dis<=50){
+    digitalWrite(led2,HIGH);
+  }
+  else{
+    digitalWrite(led2,LOW);
+  }
+}
