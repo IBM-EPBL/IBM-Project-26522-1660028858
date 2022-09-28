@@ -1,1 +1,17 @@
+#Build a python code,Assume u get Temperature and Humidity values
+#(Generated with random function) and write a condition to countinuosly
+#detect alarm in case of high temperature
 
+
+from random import* #import random value generator package
+t=randint(1,100); #Random Value generator
+h=randint(1,100);     
+print("Temperature is",t);
+print("\nHumidity is",h);
+if t>=70:
+      if h>60:
+        print("It is Unsafe....Hazardous Area");
+elif t>=70:
+    print("High Temperature");
+else:
+    print("Condition os Good");
