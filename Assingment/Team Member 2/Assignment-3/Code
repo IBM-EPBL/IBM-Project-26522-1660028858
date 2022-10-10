@@ -1,0 +1,35 @@
+//PROGRAM FOR LED BLINK
+
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setwarnings(FALSE)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(19,GPIO.OUT,initial=GPIO.LOW)
+while True:
+ GPIO.output(19,GPIO.HIGH)
+ sleep(2)
+ GPIO.output(19,GPIO.LOW)
+ sleep(2)
+
+//PROGRAM FOR TRAFFIC LIGHT CONTROLLER
+
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setwarnings(FALSE)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(19,GPIO.OUT,initial=GPIO.LOW)
+GPIO.setup(21,GPIO.OUT,initial=GPIO.LOW)
+GPIO.setup(23,GPIO.OUT,initial=GPIO.LOW)
+while True:
+ GPIO.output(19,GPIO.HIGH)
+ GPIO.output(21,GPIO.LOW)
+ GPIO.output(23,GPIO.LOW)
+ sleep(2)
+ GPIO.output(19,GPIO.LOW)
+ GPIO.output(21,GPIO.HIGH)
+ GPIO.output(23,GPIO.LOW)
+ sleep(2)
+ GPIO.output(19,GPIO.LOW)
+ GPIO.output(21,GPIO.LOW)
+ GPIO.output(23,GPIO.HIGH)
+ sleep(2)
